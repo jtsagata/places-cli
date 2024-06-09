@@ -1,0 +1,94 @@
+.ie \n(.g .ds Aq \(aq
+.el .ds Aq '
+.TH places-cli 1  "places-cli 0.1.0" 
+.SH NAME
+places\-cli \- A cli program to get file and directory locations from XDG
+.SH SYNOPSIS
+\fBplaces\fR [\fB\-a\fR|\fB\-\-app\fR] [\fB\-h\fR|\fB\-\-help\fR] [\fB\-V\fR|\fB\-\-version\fR] <\fIlocation\fR> [\fIpathel\fR] 
+.SH DESCRIPTION
+A handy tool for your scripts to always get correct path names for known locations.
+Sometimes the location is changed by either ENVIRONMENT variables, or by user localization.
+Using this tool you always get the correct path.
+.SH OPTIONS
+.TP
+\fB\-a\fR, \fB\-\-app\fR=\fIprogram\fR
+Optional program to get paths
+
+Example: \*(Aq\-\-app lsd config\*(Aq      ~/.config/lsd
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+Print help (see a summary with \*(Aq\-h\*(Aq)
+.TP
+\fB\-V\fR, \fB\-\-version\fR
+Print version
+.TP
+<\fIlocation\fR>
+The (XDG) location.
+.br
+
+.br
+\fIPossible values:\fR
+.RS 14
+.IP \(bu 2
+home: HOME                         /home/alice
+.IP \(bu 2
+desktop: XDG_DESKTOP_DIR              /home/alice/Desktop
+.IP \(bu 2
+downloads: XDG_DOWNLOAD_DIR             /home/alice/Downloads
+.IP \(bu 2
+templates: XDG_TEMPLATES_DIR            /home/alice/Templates
+.IP \(bu 2
+documents: XDG_DOCUMENTS_DIR            /home/alice/Documents
+.IP \(bu 2
+pictures: XDG_PICTURES_DIR             /home/alice/Pictures
+.IP \(bu 2
+videos: XDG_VIDEOS_DIR               /home/alice/Videos
+.IP \(bu 2
+music: XDG_MUSIC_DIR                /home/alice/Music
+.IP \(bu 2
+public: XDG_PUBLICSHARE_DIR          /home/alice/Public
+
+.IP \(bu 2
+config: XDG_CONFIG_HOME               /home/alice/.config
+.IP \(bu 2
+bin: XDG_BIN_HOME                  /home/alice/.local/bin
+.IP \(bu 2
+cache: XDG_CACHE_HOME                /home/alice/.cache
+.IP \(bu 2
+state: XDG_STATE_HOME                /home/alice/.state
+.IP \(bu 2
+data: XDG_DATA_HOME                 /home/alice/.local/share
+
+Note: You always get expanded paths and not paths starting with ~.
+.IP \(bu 2
+autostart: XDG_CONFIG_HOME/autostart     ~/.config/autostart
+.IP \(bu 2
+fonts: XDG_DATA_HOME/fonts           ~/.local/share/fonts
+.IP \(bu 2
+menus: XDG_DATA_HOME/applications    ~/.local/share/applications
+.IP \(bu 2
+backgrounds: XDG_DATA_HOME/backgrounds     ~/.local/share/backgrounds
+.IP \(bu 2
+icons: XDG_DATA_HOME/icons           ~/.local/share/icons
+.RE
+.TP
+[\fIpathel\fR]
+Optional list of path elements to append
+.SH EXTRA
+Some examples:
+	Get a path like: /home/alice/.config/gizmo/theme/colors.txt
+	   $ places \-a gizmo config theme colors.txt
+	or $ places config gizmo theme colors.txt
+	Get config files:
+	   $ lsd $(places \-\-app=gizmo data)
+	or $ places \-\-app=gizmo data | xargs lsd
+	Copy a config file
+	   $ cp gizmo_config.toml $(places \-a gizmo config)
+	Get a folder inside Downloads dir, ven if it is Localized
+	   $ places downloads Software
+	     /home/alice/Descargas/Software
+
+Report any bugs on github
+    
+.SH VERSION
+v0.1.0
