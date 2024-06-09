@@ -2,13 +2,13 @@
 name = "places-cli"
 version = "0.1.0"
 edition = "2021"
-description = "A cli programm to get file and directory locations from XDG"
+description = "A cli program to get file and directory locations from XDG"
 license = "AGPL-3"
-keywords = ["cli","xdg"]
+keywords = ["cli", "xdg"]
 
 [[bin]]
-name="places"
-path ="src/main.rs"
+name = "places"
+path = "src/main.rs"
 
 [dependencies]
 clap = { version = "4.5.6", features = ["derive", "cargo"] }

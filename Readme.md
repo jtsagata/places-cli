@@ -20,7 +20,7 @@ Arguments:
           - pictures:    XDG_PICTURES_DIR             /home/alice/Pictures
           - videos:      XDG_VIDEOS_DIR               /home/alice/Videos
           - music:       XDG_MUSIC_DIR                /home/alice/Music
-          - public:      share XDG_PUBLICSHARE_DIR    /home/alice/Public
+          - public:      XDG_PUBLICSHARE_DIR          /home/alice/Public
             
           - config:      XDG_CONFIG_HOME               /home/alice/.config
           - bin:         XDG_BIN_HOME                  /home/alice/.local/bin

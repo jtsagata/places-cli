@@ -46,7 +46,7 @@ enum Location {
     Videos,
     #[value(help = "XDG_MUSIC_DIR                /home/alice/Music")]
     Music,
-    #[value(help = "share XDG_PUBLICSHARE_DIR    /home/alice/Public\n")]
+    #[value(help = "XDG_PUBLICSHARE_DIR          /home/alice/Public\n")]
     Public,
     #[value(help = "XDG_CONFIG_HOME               /home/alice/.config")]
     Config,
