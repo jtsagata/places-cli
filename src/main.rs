@@ -54,6 +54,8 @@ enum Location {
     Bin,
     #[value(help = "XDG_CACHE_HOME                /home/alice/.cache")]
     Cache,
+    #[value(help = "XDG_STATE_HOME                /home/alice/.state")]
+    State,
     #[value(help = "XDG_DATA_HOME                 /home/alice/.local/share\n\n\
     Note: You always get expanded paths and not paths starting with ~.")]
     Data,
@@ -105,6 +107,7 @@ fn get_app_dir(app: &String, location: &Location) -> String {
         Location::Bin => as_string(&base_dirs.executable_dir().unwrap().join(&app)),
         Location::Cache => as_string(app_dirs.cache_dir()),
         Location::Data => as_string(app_dirs.data_dir()),
+        Location::State => as_string(&base_dirs.state_dir().unwrap().join(&app)),
         // Fall backs for orthogonality, It is like just ignoring the --app flag
         Location::Autostart => as_string(base_dirs.config_dir().join("autostart").as_path()),
         Location::Fonts => as_string(base_dirs.data_dir().join("fonts").as_path()),
@@ -129,10 +132,11 @@ fn get_home_dir(location: &Location) -> String {
         Location::Videos => as_string(user_dirs.video_dir().unwrap()),
         Location::Music => as_string(user_dirs.audio_dir().unwrap()),
         Location::Public => as_string(user_dirs.public_dir().unwrap()),
-        Location::Config => as_string(Some(base_dirs.config_dir()).unwrap()),
+        Location::Config => as_string(base_dirs.config_dir()),
         Location::Bin => as_string(base_dirs.executable_dir().unwrap()),
-        Location::Cache => as_string(Some(base_dirs.cache_dir()).unwrap()),
-        Location::Data => as_string(Some(base_dirs.data_dir()).unwrap()),
+        Location::Cache => as_string(base_dirs.cache_dir()),
+        Location::State => as_string(base_dirs.state_dir().unwrap()),
+        Location::Data => as_string(base_dirs.data_dir()),
         Location::Autostart => as_string(base_dirs.config_dir().join("autostart").as_path()),
         Location::Fonts => as_string(base_dirs.data_dir().join("fonts").as_path()),
         Location::Menus => as_string(base_dirs.data_dir().join("applications").as_path()),
