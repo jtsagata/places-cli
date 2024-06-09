@@ -1,24 +1,61 @@
-# Base Dirs
+# Quick Intro
 
-| Function    | notes| Example|
-|-------------|-----------------|--------|
-| home_dir ()      | $HOME            | /home/alice/ |
-| * cache_dir()      | $XDG_CACHE_HOME  | /home/alice/.cache |
-| * config_dir()     | $XDG_CONFIG_HOME | /home/alice/.config |
-| * data_dir()       | $XDG_DATA_HOME   | /home/alice/.local/share |
-| * preference_dir() | $XDG_CONFIG_HOME | /home/alice/.config |
-| ? executable_dir | $XDG_BIN_HOME    | /home/alice/.local/bin |
+```
+A handy tool for your scripts to always get correct path names for known locations.
+Sometimes the location is changed by either ENVIRONMENT variables, or by user localization.
+Using this tool you always get the correct path.
 
-1. The state directory contains data that should be retained between sessions (unlike the runtime directory), but may not be important/portable enough to be synchronized across machines (unlike the config/preferences/data directories).
-2. It is safe to assume that constructor works
-3. cat ~/.config/user-dirs.dirs 
+Usage: places [OPTIONS] <location> [pathel]...
 
-places xdg [directory] 
-places base [directory] 
-places <project name> [directory] [<filename>] 
+Arguments:
+  <location>
+          The (XDG) location.
 
-places [--program <name>] [audio,home,bin,config] <filename>
+          Possible values:
+          - home:        HOME                         /home/alice
+          - desktop:     XDG_DESKTOP_DIR              /home/alice/Desktop
+          - downloads:   XDG_DOWNLOAD_DIR             /home/alice/Downloads
+          - templates:   XDG_TEMPLATES_DIR            /home/alice/Templates
+          - documents:   XDG_DOCUMENTS_DIR            /home/alice/Documents
+          - pictures:    XDG_PICTURES_DIR             /home/alice/Pictures
+          - videos:      XDG_VIDEOS_DIR               /home/alice/Videos
+          - music:       XDG_MUSIC_DIR                /home/alice/Music
+          - public:      share XDG_PUBLICSHARE_DIR    /home/alice/Public
+            
+          - config:      XDG_CONFIG_HOME               /home/alice/.config
+          - bin:         XDG_BIN_HOME                  /home/alice/.local/bin
+          - cache:       XDG_CACHE_HOME                /home/alice/.cache
+          - data:        XDG_DATA_HOME                 /home/alice/.local/share
+            
+            Note: You always get expanded paths and not paths starting with ~.
+          - autostart:   XDG_CONFIG_HOME/autostart     ~/.config/autostart
+          - fonts:       XDG_DATA_HOME/fonts           ~/.local/share/fonts
+          - menus:       XDG_DATA_HOME/applications    ~/.local/share/applications
+          - backgrounds: XDG_DATA_HOME/backgrounds     ~/.local/share/backgrounds
+          - icons:       XDG_DATA_HOME/icons           ~/.local/share/icons
 
-1. Leave the making links can be done in bash  [--make]|[--link <file>] 
-2. Move xdg to separate executable
+  [pathel]...
+          Optional list of path elements to append
 
+Options:
+  -a, --app <program>
+          Optional program to get paths
+          
+          Example: '--app lsd config'      ~/.config/lsd
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+  -V, --version
+          Print version
+
+TODO:Some examples
+```
+
+### TODO
+- [x] Basic functionality
+- [ ] Test in production
+- [ ] Add license and docs
+- [ ] Man page, completion
+- [ ] Debian packaging
+- [ ] Release and install script
