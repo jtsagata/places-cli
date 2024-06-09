@@ -25,6 +25,7 @@ Arguments:
           - config:      XDG_CONFIG_HOME               /home/alice/.config
           - bin:         XDG_BIN_HOME                  /home/alice/.local/bin
           - cache:       XDG_CACHE_HOME                /home/alice/.cache
+          - state:       XDG_STATE_HOME                /home/alice/.state
           - data:        XDG_DATA_HOME                 /home/alice/.local/share
             
             Note: You always get expanded paths and not paths starting with ~.
@@ -49,7 +50,19 @@ Options:
   -V, --version
           Print version
 
-TODO:Some examples
+Some examples:
+	Get a path like: /home/alice/.config/gizmo/theme/colors.txt
+	   $ places -a gizmo config theme colors.txt
+	or $ places config gizmo theme colors.txt
+	Get config files:
+	   $ lsd $(places --app=gizmo data)
+	or $ places --app=gizmo data | xargs lsd
+	Copy a config file
+	   $ cp gizmo_config.toml $(places -a gizmo config)
+	Get a folder inside Downloads dir, ven if it is Localized
+	   $ places downloads Software
+	     /home/alice/Descargas/Software
+
 ```
 
 ### TODO

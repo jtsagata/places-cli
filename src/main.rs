@@ -10,7 +10,20 @@ use std::path::{Path, PathBuf};
     long_about = "A handy tool for your scripts to always get correct path names for known locations.\n\
     Sometimes the location is changed by either ENVIRONMENT variables, or by user localization.\n\
     Using this tool you always get the correct path.",
-    after_long_help = "TODO:Some examples"
+    after_long_help = "Some examples:\n\
+        \tGet a path like: /home/alice/.config/gizmo/theme/colors.txt\n\
+        \t   $ places -a gizmo config theme colors.txt\n\
+        \tor $ places config gizmo theme colors.txt\n\
+        \tGet config files:\n\
+        \t   $ lsd $(places --app=gizmo data)\n\
+        \tor $ places --app=gizmo data | xargs lsd\n\
+        \tCopy a config file\n\
+        \t   $ cp gizmo_config.toml $(places -a gizmo config)\n\
+        \tGet a folder inside Downloads dir, ven if it is Localized\n\
+        \t   $ places downloads Software\n\
+        \t     /home/alice/Descargas/Software\n\n\
+    Report any bugs on github
+    "
 )]
 struct Cli {
     #[arg(short, long, value_name = "program", value_hint = CommandName)]
