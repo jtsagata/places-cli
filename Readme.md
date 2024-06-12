@@ -1,4 +1,4 @@
-[![CI](https://github.com/{{gh-username}}/{{project-name}}/workflows/CI/badge.svg)](https://github.com/jtsagata/places-cli/actions)
+[![CI](https://github.com/jtsagata/places-cli/workflows/CI/badge.svg)](https://github.com/jtsagata/places-cli/actions)
 
 # places-cli CLI
 A handy tool for your scripts to always get correct path names for known locations.
