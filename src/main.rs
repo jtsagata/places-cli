@@ -1,11 +1,9 @@
 mod cli;
 
-use clap::{Parser};
+use clap::Parser;
+use cli::{Cli, Location};
 use directories::{BaseDirs, ProjectDirs, UserDirs};
 use std::path::{Path, PathBuf};
-use cli::{Cli, Location};
-
-
 
 fn main() {
     let cli = Cli::parse();
@@ -31,19 +29,19 @@ fn get_app_dir(app: &String, location: &Location) -> String {
     match location {
         // It is expected to always get something, so just called unwrap() until something bad reported
         Location::Home => as_string(user_dirs.home_dir()),
-        Location::Desktop => as_string(&user_dirs.desktop_dir().unwrap().join(&app)),
-        Location::Downloads => as_string(&user_dirs.download_dir().unwrap().join(&app)),
-        Location::Templates => as_string(&user_dirs.template_dir().unwrap().join(&app)),
-        Location::Documents => as_string(&user_dirs.document_dir().unwrap().join(&app)),
-        Location::Pictures => as_string(&user_dirs.picture_dir().unwrap().join(&app)),
-        Location::Videos => as_string(&user_dirs.video_dir().unwrap().join(&app)),
-        Location::Music => as_string(&user_dirs.audio_dir().unwrap().join(&app)),
-        Location::Public => as_string(&user_dirs.public_dir().unwrap().join(&app)),
+        Location::Desktop => as_string(&user_dirs.desktop_dir().unwrap().join(app)),
+        Location::Downloads => as_string(&user_dirs.download_dir().unwrap().join(app)),
+        Location::Templates => as_string(&user_dirs.template_dir().unwrap().join(app)),
+        Location::Documents => as_string(&user_dirs.document_dir().unwrap().join(app)),
+        Location::Pictures => as_string(&user_dirs.picture_dir().unwrap().join(app)),
+        Location::Videos => as_string(&user_dirs.video_dir().unwrap().join(app)),
+        Location::Music => as_string(&user_dirs.audio_dir().unwrap().join(app)),
+        Location::Public => as_string(&user_dirs.public_dir().unwrap().join(app)),
         Location::Config => as_string(app_dirs.config_dir()),
-        Location::Bin => as_string(&base_dirs.executable_dir().unwrap().join(&app)),
+        Location::Bin => as_string(&base_dirs.executable_dir().unwrap().join(app)),
         Location::Cache => as_string(app_dirs.cache_dir()),
         Location::Data => as_string(app_dirs.data_dir()),
-        Location::State => as_string(&base_dirs.state_dir().unwrap().join(&app)),
+        Location::State => as_string(&base_dirs.state_dir().unwrap().join(app)),
         // Fall backs for orthogonality, It is like just ignoring the --app flag
         Location::Autostart => as_string(base_dirs.config_dir().join("autostart").as_path()),
         Location::Fonts => as_string(base_dirs.data_dir().join("fonts").as_path()),

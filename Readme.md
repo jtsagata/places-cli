@@ -1,3 +1,33 @@
+# places-cli CLI
+A handy tool for your scripts to always get correct path names for known locations.
+
+
+## What does places-cli?
+
+A handy tool for your scripts to always get correct path names for known locations.
+Sometimes the location is changed by either ENVIRONMENT variables, or by user localization.
+Using this tool you always get the correct path.
+
+### Install
+
+To install the places-cli, you just need to run
+
+```bash
+cargo install --force places-cli
+```
+
+(--force just makes it update to the latest `places-cli` if it's already installed)
+
+**Note** the binary is called `places` (without `-cli`)
+
+to verify if the installation was successful, you can run `which places` that should output similar to
+
+```sh
+$HOME/.cargo/bin/places
+```
+
+### Usage
+
 # Quick Intro
 
 ```
@@ -72,3 +102,12 @@ Some examples:
 - [ ] Man page, completion
 - [ ] Debian packaging
 - [ ] Release and install script
+
+## License
+
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+- **[GNU GPL v3 license](https://www.gnu.org/licenses/gpl-3.0)**
+- Copyright 2019 © ["Tsagatakis Yianis][me].
+
+[me]: https://linux-user.gr
