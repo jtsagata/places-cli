@@ -1,3 +1,7 @@
+[![Crates.io](https://img.shields.io/crates/v/{places-cli.svg)](https://crates.io/crates/{{project-name}})
+[![Docs.rs](https://docs.rs/{{project-name}}/badge.svg)](https://docs.rs/{{project-name}})
+[![CI](https://github.com/{{gh-username}}/{{project-name}}/workflows/CI/badge.svg)](https://github.com/{{gh-username}}/{{project-name}}/actions)
+
 # places-cli CLI
 A handy tool for your scripts to always get correct path names for known locations.
 
@@ -51,13 +55,13 @@ Arguments:
           - videos:      XDG_VIDEOS_DIR               /home/alice/Videos
           - music:       XDG_MUSIC_DIR                /home/alice/Music
           - public:      XDG_PUBLICSHARE_DIR          /home/alice/Public
-            
+
           - config:      XDG_CONFIG_HOME               /home/alice/.config
           - bin:         XDG_BIN_HOME                  /home/alice/.local/bin
           - cache:       XDG_CACHE_HOME                /home/alice/.cache
           - state:       XDG_STATE_HOME                /home/alice/.state
           - data:        XDG_DATA_HOME                 /home/alice/.local/share
-            
+
             Note: You always get expanded paths and not paths starting with ~.
           - autostart:   XDG_CONFIG_HOME/autostart     ~/.config/autostart
           - fonts:       XDG_DATA_HOME/fonts           ~/.local/share/fonts
@@ -71,7 +75,7 @@ Arguments:
 Options:
   -a, --app <program>
           Optional program to get paths
-          
+
           Example: '--app lsd config'      ~/.config/lsd
 
   -h, --help
