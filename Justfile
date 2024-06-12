@@ -11,6 +11,7 @@ check:
 lint:
     cargo clippy --all
     cargo fmt --all --check
+    cargo fmt --all
 
 # Publish to gitea
 gitea:
