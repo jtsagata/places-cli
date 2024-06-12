@@ -14,5 +14,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-  - Github deployment
-
+* Github deployment
+* Bump softprops/action-gh-release from 1 to 2
+* Bump clap from 4.5.6 to 4.5.7
