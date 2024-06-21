@@ -1,6 +1,5 @@
 # places-cli
-A handy tool for your scripts to always get correct path names for known locations.
-Sometimes the location is changed by either ENVIRONMENT variables, or by user localization.
+A handy tool for your scripts to get correct path names from known locations or XDG directories.
 
 ## Quick usage
 ```text
@@ -9,7 +8,9 @@ Usage: places [OPTIONS] <location> [pathel]...
 Arguments:
   <location>
 
-[possible values: home, desktop, downloads, templates, documents, pictures, videos, music, public, config, bin, cache, state, data, autostart, fonts, menus, backgrounds, icons]
+possible values: home, desktop, downloads, templates, documents, pictures,
+videos, music, public, config, bin, cache, state, data, autostart, fonts,
+menus, backgrounds, icons
 
   [pathel]...
           Optional list of path elements to append

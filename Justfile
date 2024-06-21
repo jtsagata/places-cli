@@ -26,6 +26,12 @@ tag-version: check
     git tag -a v{{ version }} -m "Release v{{ version }}"
     git push origin v{{ version }}
 
+# Remove a tag
+tag-remove: check
+    git tag --delete v{{ version }}
+    git push --delete origin v{{ version }}
+    git push origin main
+
 # crate tag push it to origin and then publish to crates.io (TODO)
 crates: tag-version
     cargo publish

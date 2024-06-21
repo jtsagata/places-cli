@@ -1,5 +1,5 @@
 [![Crates.io](https://img.shields.io/crates/v/places-cli)](https://crates.io/crates/places-cli)
-[![GitHub Release](https://img.shields.io/github/v/release/jtsagata/places-cli?include_prereleases)](https://github.com/jtsagata/places-cli/releases)
+[![GitHub Release](https://img.shields.io/github/v/release/jtsagata/places-cli)](https://github.com/jtsagata/places-cli/releases)
 [![CI](https://github.com/jtsagata/places-cli/workflows/CI/badge.svg)](https://github.com/jtsagata/places-cli/actions)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
@@ -66,6 +66,10 @@ cargo install --force places-cli
 ```
 
 > --`force` just makes it update to the latest `places-cli` if it's already installed
+
+Download the man page and the completions for github repository and put them in the right place.
+
+Next version will have an installation script and hopefully some deb packages and rpms (help wanted with github actions).
 
 
 #### Verifiy the installation
