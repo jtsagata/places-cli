@@ -1,15 +1,15 @@
+![Crates.io](https://img.shields.io/crates/v/places-cli)
+![GitHub Release](https://img.shields.io/github/v/release/jtsagata/places-cli?include_prereleases)
 [![CI](https://github.com/jtsagata/places-cli/workflows/CI/badge.svg)](https://github.com/jtsagata/places-cli/actions)
-
-# places-cli CLI
-A handy tool for your scripts to always get correct path names for known locations.
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 
-## What does places-cli?
 
+# places
 A handy tool for your scripts to always get correct path names for known locations.
 Sometimes the location is changed by either ENVIRONMENT variables, or by user localization.
-Using this tool you always get the correct path.
 
+> **NOTE**: The package name is `places-cli` and the binary is just `places`.
 
 ### Motivation
 Let's say you want to find the desktop and the download directory.
@@ -22,16 +22,15 @@ echo ${XDG_DESKTOP_DIR:-$HOME/Desktop}
 echo ${XDG_DOWNLOAD_DIR:-$HOME}
 ```
 
-with _places_ it becomes:
+Or use the `xdg-user-dir`, but this is prone to errors.  With _places_ it becomes:
 
 ```shell
 places desktop
 places downloads
 ```
 
-Ah, much better
-
-But you can do much more with it
+Ah, much better, no UPPERCASE and will return an error if you make some typo.
+But wait, you can do much more with it
 
 - Get a path like: _/home/alice/.config/gizmo/theme/colors.txt_
 
@@ -61,7 +60,7 @@ places downloads Software
 This returns something like _/home/alice/Descargas/Software_
 
 
-### Install
+### Installation
 
 To install the places-cli, you just need to run
 
@@ -70,9 +69,10 @@ cargo install --force places-cli
 ```
 
 > --`force` just makes it update to the latest `places-cli` if it's already installed \
-> The binary is called `places` (without `-cli`)
 
-to verify if the installation was successful, you can run
+
+#### Verifiy the installation
+To verify if the installation was successful, you can run
 ```shell
 which places
 ```
@@ -82,6 +82,3 @@ which places
 $HOME/.cargo/bin/places
 ```
 
-## License
-
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
