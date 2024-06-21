@@ -1,7 +1,7 @@
 [package]
 name = "places-cli"
 version = "0.1.1"
-authors = ["Tsagatakis Yianis <tsagatakis@protonmail.com>"]
+authors = ["Ioannis Tsagkatakis<tsagatakis@protonmail.com>"]
 license = "GPL-3.0"
 description = "A cli program to get file and directory locations from XDG"
 repository = "https://github.com/jtsagata/places-cli"
@@ -27,3 +27,58 @@ clap_complete = "4.5.5"
 
 [profile.release]
 lto = true
+debug = false
+
+
+[package.metadata.deb]
+name = "places-cli"
+extended-description = """\
+places-cli is a handy tool for your scripts to always get correct path names for known locations or XDG directories.
+"""
+section = "utils"
+assets = [
+  # Binary
+  [
+    "target/release/places",
+    "usr/bin/",
+    "755",
+  ],
+  # Completions
+  [
+    "support/completions/places.bash",
+    "usr/share/bash-completion/completions/places",
+    "644",
+  ],
+  [
+    "support/completions/places.elv",
+    "usr/share/elvish/lib/",
+    "644",
+  ],
+  [
+    "support/completions/places.fish",
+    "usr/share/fish/vendor_completions.d/",
+    "644",
+  ],
+  [
+    "support/completions/_places",
+    "usr/share/zsh/vendor-completions/",
+    "644",
+  ],
+  # Manpage
+  [
+    "support/manpage/places.1",
+    "usr/share/man/man1/",
+    "644",
+  ],
+  # Misc files
+  [
+    "Readme.md",
+    "usr/share/doc/places-cli/Readme.md",
+    "644",
+  ],
+  [
+    "CHANGELOG.md",
+    "usr/share/doc/places-cli/",
+    "644",
+  ],
+]

@@ -15,9 +15,7 @@ places - Get paths for common places
 **places** \[**OPTIONS**] <**location**> \[**pathel**]...
 
 # DESCRIPTION
-A handy tool for your scripts to always get correct path names for known locations.
-Sometimes the location is changed by either ENVIRONMENT variables, or by user localization.
-Using this tool you always get the correct path.
+A handy tool for your scripts to get correct path names from known locations or XDG directories.
 
 
 # ARGUMENTS

@@ -4,8 +4,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 # places-cli
-A handy tool for your scripts to always get correct path names for known locations.
-Sometimes the location is changed by either ENVIRONMENT variables, or by user localization.
+A handy tool for your scripts to get correct path names from known locations or XDG directories.
 
 **NOTE**: The package name is `places-cli` and the binary name is just `places`.
 
@@ -20,7 +19,7 @@ echo ${XDG_DESKTOP_DIR:-$HOME/Desktop}
 echo ${XDG_DOWNLOAD_DIR:-$HOME}
 ```
 
-Or use the `xdg-user-dir`, but this is prone to errors.  With _places_ it becomes:
+Or use something `xdg-user-dir DOWNLOAD`, but this is prone to errors.  With _places_ it becomes:
 
 ```shell
 places desktop

@@ -41,4 +41,10 @@ _gen-man:
 
 # Create and view the manpage
 man: _gen-man
-    man support/manpage/places.1
+    PAGER=most man support/manpage/places.1
+
+# Create a debian file
+deb:
+    cargo deb
+    dpkg-deb --info target/debian/places-cli_{{ version }}-1_amd64.deb
+    dpkg-deb --contents target/debian/places-cli_{{ version }}-1_amd64.deb
