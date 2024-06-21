@@ -21,25 +21,7 @@ _places() {
 '--help[Print help (see more with '\''--help'\'')]' \
 '-V[Print version]' \
 '--version[Print version]' \
-':location -- The (XDG) location.:((home\:"HOME                         /home/alice"
-desktop\:"XDG_DESKTOP_DIR              /home/alice/Desktop"
-downloads\:"XDG_DOWNLOAD_DIR             /home/alice/Downloads"
-templates\:"XDG_TEMPLATES_DIR            /home/alice/Templates"
-documents\:"XDG_DOCUMENTS_DIR            /home/alice/Documents"
-pictures\:"XDG_PICTURES_DIR             /home/alice/Pictures"
-videos\:"XDG_VIDEOS_DIR               /home/alice/Videos"
-music\:"XDG_MUSIC_DIR                /home/alice/Music"
-public\:"XDG_PUBLICSHARE_DIR          /home/alice/Public "
-config\:"XDG_CONFIG_HOME               /home/alice/.config"
-bin\:"XDG_BIN_HOME                  /home/alice/.local/bin"
-cache\:"XDG_CACHE_HOME                /home/alice/.cache"
-state\:"XDG_STATE_HOME                /home/alice/.state"
-data\:"XDG_DATA_HOME                 /home/alice/.local/share  Note\: You always get expanded paths and not paths starting with ~."
-autostart\:"XDG_CONFIG_HOME/autostart     ~/.config/autostart"
-fonts\:"XDG_DATA_HOME/fonts           ~/.local/share/fonts"
-menus\:"XDG_DATA_HOME/applications    ~/.local/share/applications"
-backgrounds\:"XDG_DATA_HOME/backgrounds     ~/.local/share/backgrounds"
-icons\:"XDG_DATA_HOME/icons           ~/.local/share/icons"))' \
+':location:(home desktop downloads templates documents pictures videos music public config bin cache state data autostart fonts menus backgrounds icons)' \
 '*::files -- Optional list of path elements to append:' \
 && ret=0
 }
