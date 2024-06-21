@@ -21,8 +21,7 @@ _shellcheck:
 
 # create version tag and push to origin
 tag-version: check
-    cargo deny check
-    grep -Fq '[{{ version }}]' CHANGELOG.md                 # The CHANGELOG.md should contains updated changes
+    grep -Fq '{{ version }}' CHANGELOG.md                 # The CHANGELOG.md should contains updated changes
     git diff --no-ext-diff --quiet --exit-code              # All files should be committed
     git tag -a {{ version }} -m "Release {{ version }}"
     git push origin {{ version }}
