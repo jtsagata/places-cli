@@ -1,6 +1,6 @@
 [package]
 name = "places-cli"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Tsagatakis Yianis <tsagatakis@protonmail.com>"]
 license = "GPL-3.0"
 description = "A cli program to get file and directory locations from XDG"
