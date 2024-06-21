@@ -50,7 +50,7 @@ cp gizmo_config.toml $(places -a gizmo config)
 
 
 
-Get a folder inside `'Downloads dir'`, even if it is localized.
+- Get a folder inside `'Downloads dir'`, even if it is localized.
 ```shell
 places downloads Software
 ```
@@ -74,7 +74,7 @@ To verify if the installation was successful, you can run
 ```shell
 which places
 ```
- that should output similar to
+that should output similar to
 
 ```shell
 $HOME/.cargo/bin/places
