@@ -23,57 +23,57 @@ jobs:
           - os_name: Linux-x86_64
             os: ubuntu-20.04
             target: x86_64-unknown-linux-musl
-            bin: places-cli
+            bin: places
             name: places-cli-Linux-x86_64-musl.tar.gz
 
           - os_name: Linux-aarch64
             os: ubuntu-20.04
             target: aarch64-unknown-linux-musl
-            bin: places-cli
+            bin: places
             name: places-cli-Linux-aarch64-musl.tar.gz
 
           - os_name: Linux-arm
             os: ubuntu-20.04
             target: arm-unknown-linux-musleabi
-            bin: places-cli
+            bin: places
             name: places-cli-Linux-arm-musl.tar.gz
 
           - os_name: Linux-i686
             os: ubuntu-20.04
             target: i686-unknown-linux-musl
-            bin: places-cli
+            bin: places
             name: places-cli-Linux-i686-musl.tar.gz
             skip_tests: true
 
           - os_name: Linux-riscv64
             os: ubuntu-20.04
             target: riscv64gc-unknown-linux-gnu
-            bin: places-cli
+            bin: places
             name: places-cli-Linux-riscv64gc-gnu.tar.gz
 
           - os_name: Windows-aarch64
             os: windows-latest
             target: aarch64-pc-windows-msvc
-            bin: places-cli.exe
+            bin: places.exe
             name: places-cli-Windows-aarch64.zip
             skip_tests: true
 
           - os_name: Windows-x86_64
             os: windows-latest
             target: x86_64-pc-windows-msvc
-            bin: places-cli.exe
+            bin: places.exe
             name: places-cli-Windows-x86_64.zip
 
           - os_name: macOS-x86_64
             os: macOS-latest
             target: x86_64-apple-darwin
-            bin: places-cli
+            bin: places
             name: places-cli-Darwin-x86_64.tar.gz
 
           - os_name: macOS-aarch64
             os: macOS-latest
             target: aarch64-apple-darwin
-            bin: places-cli
+            bin: places
             name: places-cli-Darwin-aarch64.tar.gz
             skip_tests: true
         toolchain:
