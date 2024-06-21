@@ -1,5 +1,5 @@
-![Crates.io](https://img.shields.io/crates/v/places-cli)
-![GitHub Release](https://img.shields.io/github/v/release/jtsagata/places-cli?include_prereleases)
+[![Crates.io](https://img.shields.io/crates/v/places-cli)](https://crates.io/crates/places-cli)
+[![GitHub Release](https://img.shields.io/github/v/release/jtsagata/places-cli?include_prereleases)](https://github.com/jtsagata/places-cli/releases)
 [![CI](https://github.com/jtsagata/places-cli/workflows/CI/badge.svg)](https://github.com/jtsagata/places-cli/actions)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
