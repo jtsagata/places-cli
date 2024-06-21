@@ -17,55 +17,6 @@ locations.
 Sometimes the location is changed by either ENVIRONMENT variables, or by
 user localization.
 Using this tool you always get the correct path.
-.SS MOTIVATION
-.PP
-Let\[cq]s say you want to find the desktop and the download directory.
-Without this tool you have to do something like:
-.IP
-.nf
-\f[C]
-test -f ${XDG_CONFIG_HOME:-\[ti]/.config}/user-dirs.dirs && \[rs]
-     source ${XDG_CONFIG_HOME:-\[ti]/.config}/user-dirs.dirs
-echo ${XDG_DESKTOP_DIR:-$HOME/Desktop}
-echo ${XDG_DOWNLOAD_DIR:-$HOME}
-\f[R]
-.fi
-.PP
-with \f[I]places\f[R] it becomes:
-.IP
-.nf
-\f[C]
-places desktop
-places downloads
-\f[R]
-.fi
-.PP
-Ah, much better
-.SS EXAMPLES
-.PP
-But you can do much more with it
-.SS * Get a path like: \f[I]/home/alice/.config/gizmo/theme/colors.txt\f[R]
-.PP
-\f[B]$\f[R] places -a gizmo config theme colors.txt
-.PD 0
-.P
-.PD
-\f[B]$\f[R] places config gizmo theme colors.txt
-.SS * List all config files for the \f[I]`gizmo'\f[R] program
-.PP
-\f[B]$\f[R] lsd $(places \[en]app=gizmo data)
-.PD 0
-.P
-.PD
-\f[B]$\f[R] places \[en]app=gizmo data | xargs lsd
-.SS * Copy a config file
-.PP
-\f[B]$\f[R] cp gizmo_config.toml $(places -a gizmo config)
-.SS * Get a folder inside \f[C]\[aq]Downloads dir\[aq]\f[R], even if it is localized.
-.PP
-\f[B]$\f[R] places downloads Software
-.PP
-This returns something like \f[I]/home/alice/Descargas/Software\f[R]
 .SH ARGUMENTS
 .TP
 \f[B]\f[CB]<location>\f[B]\f[R]
@@ -248,6 +199,31 @@ T}@T{
 \f[I]\[ti]/.local/share/backgrounds\f[R]
 T}
 .TE
+.SH EXAMPLES
+.PP
+But you can do much more with it
+.SS * Get a path like: \f[I]/home/alice/.config/gizmo/theme/colors.txt\f[R]
+.PP
+\f[B]$\f[R] places -a gizmo config theme colors.txt
+.PD 0
+.P
+.PD
+\f[B]$\f[R] places config gizmo theme colors.txt
+.SS * List all config files for the \f[I]`gizmo'\f[R] program
+.PP
+\f[B]$\f[R] lsd $(places \[en]app=gizmo data)
+.PD 0
+.P
+.PD
+\f[B]$\f[R] places \[en]app=gizmo data | xargs lsd
+.SS * Copy a config file
+.PP
+\f[B]$\f[R] cp gizmo_config.toml $(places -a gizmo config)
+.SS * Get a folder inside \f[C]\[aq]Downloads dir\[aq]\f[R], even if it is localized.
+.PP
+\f[B]$\f[R] places downloads Software
+.PP
+This returns something like \f[I]/home/alice/Descargas/Software\f[R]
 .SH ENVIRONMENT
 .PP
 The list of environment variables that affect the operation is listed on

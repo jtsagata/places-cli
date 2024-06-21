@@ -19,48 +19,6 @@ A handy tool for your scripts to always get correct path names for known locatio
 Sometimes the location is changed by either ENVIRONMENT variables, or by user localization.
 Using this tool you always get the correct path.
 
-## MOTIVATION
-Let's say you want to find the desktop and the download directory.
-Without this tool you have to do something like:
-
-```shell
-test -f ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs && \
-     source ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs
-echo ${XDG_DESKTOP_DIR:-$HOME/Desktop}
-echo ${XDG_DOWNLOAD_DIR:-$HOME}
-```
-
-with _places_ it becomes:
-
-```shell
-places desktop
-places downloads
-```
-
-Ah, much better
-
-## EXAMPLES
-
-But you can do much more with it
-
-### * Get a path like: _/home/alice/.config/gizmo/theme/colors.txt_
-   **\$** places -a gizmo config theme colors.txt \
-   **\$** places config gizmo theme colors.txt
-
-### * List all config files for the _'gizmo'_ program
-
-   **\$** lsd $(places --app=gizmo data) \
-   **\$** places --app=gizmo data | xargs lsd
-
-### * Copy a config file
-   **\$** cp gizmo_config.toml $(places -a gizmo config)
-
-
-### * Get a folder inside `'Downloads dir'`, even if it is localized.
-   **\$** places downloads Software
-
-   This returns something like _/home/alice/Descargas/Software_
-
 
 # ARGUMENTS
  `<location>`
@@ -118,6 +76,29 @@ Note the tool always return a full path, not paths starting with _'~/'_.
 | **fonts**       | _~/.local/share/fonts_        |
 | **menus**       | _~/.local/share/applications_ |
 | **backgrounds** | _~/.local/share/backgrounds_  |
+
+
+# EXAMPLES
+
+But you can do much more with it
+
+### * Get a path like: _/home/alice/.config/gizmo/theme/colors.txt_
+   **\$** places -a gizmo config theme colors.txt \
+   **\$** places config gizmo theme colors.txt
+
+### * List all config files for the _'gizmo'_ program
+
+   **\$** lsd $(places --app=gizmo data) \
+   **\$** places --app=gizmo data | xargs lsd
+
+### * Copy a config file
+   **\$** cp gizmo_config.toml $(places -a gizmo config)
+
+
+### * Get a folder inside `'Downloads dir'`, even if it is localized.
+   **\$** places downloads Software
+
+   This returns something like _/home/alice/Descargas/Software_
 
 
 # ENVIRONMENT
