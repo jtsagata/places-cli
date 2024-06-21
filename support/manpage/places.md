@@ -2,7 +2,7 @@
 title: places
 section: 1
 header: User Manual
-footer: lsd 0.1.0
+footer: places <version>
 date: <date>
 ---
 
@@ -24,7 +24,7 @@ Let's say you want to find the desktop and the download directory.
 Without this tool you have to do something like:
 
 ```shell
-test -f ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs && \ 
+test -f ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs && \
      source ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs
 echo ${XDG_DESKTOP_DIR:-$HOME/Desktop}
 echo ${XDG_DOWNLOAD_DIR:-$HOME}
@@ -43,7 +43,7 @@ Ah, much better
 
 But you can do much more with it
 
-### * Get a path like: _/home/alice/.config/gizmo/theme/colors.txt_ 
+### * Get a path like: _/home/alice/.config/gizmo/theme/colors.txt_
    **\$** places -a gizmo config theme colors.txt \
    **\$** places config gizmo theme colors.txt
 
@@ -57,8 +57,8 @@ But you can do much more with it
 
 
 ### * Get a folder inside `'Downloads dir'`, even if it is localized.
-   **\$** places downloads Software 
-   
+   **\$** places downloads Software
+
    This returns something like _/home/alice/Descargas/Software_
 
 
@@ -124,7 +124,7 @@ Note the tool always return a full path, not paths starting with _'~/'_.
 The list of environment variables that affect the operation is listed on the tables above.
 
 The **XDG** localized names is defined in the file _/etc/xdg/user-dirs.defaults_ and for each user
-in the file _$(XDG_CONFIG_HOME)/user-dirs.dirs_. 
+in the file _$(XDG_CONFIG_HOME)/user-dirs.dirs_.
 
 
 # BUGS

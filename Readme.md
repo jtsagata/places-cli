@@ -1,15 +1,18 @@
 ![Crates.io](https://img.shields.io/crates/v/places-cli)
 ![GitHub Release](https://img.shields.io/github/v/release/jtsagata/places-cli?include_prereleases)
+![Crates.io](https://img.shields.io/crates/v/places-cli)
+![GitHub Release](https://img.shields.io/github/v/release/jtsagata/places-cli?include_prereleases)
 [![CI](https://github.com/jtsagata/places-cli/workflows/CI/badge.svg)](https://github.com/jtsagata/places-cli/actions)
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+# places-cli CLI
+A handy tool for your scripts to always get correct path names for known locations.
 
 
-
-# places
+# places-cli
 A handy tool for your scripts to always get correct path names for known locations.
 Sometimes the location is changed by either ENVIRONMENT variables, or by user localization.
 
-> **NOTE**: The package name is `places-cli` and the binary is just `places`.
+> **NOTE**: The package name is `places-cli` and the binary name is just `places`.
 
 ### Motivation
 Let's say you want to find the desktop and the download directory.
@@ -68,7 +71,7 @@ To install the places-cli, you just need to run
 cargo install --force places-cli
 ```
 
-> --`force` just makes it update to the latest `places-cli` if it's already installed \
+> --`force` just makes it update to the latest `places-cli` if it's already installed
 
 
 #### Verifiy the installation

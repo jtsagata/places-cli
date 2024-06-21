@@ -33,12 +33,11 @@ crates: tag-version
 
 # Create man page
 _gen-man:
-    cp support/manpage/places.md support/manpage/places.md.bk
-    sed -i.bk "s|footer: places <version>|footer: places {{ version }}|" support/manpage/places.md
-    sed -i.bk "s|date: <date>|date: $(date '+%Y-%m-%d')|" support/manpage/places.md
-    pandoc --standalone --to man support/manpage/places.md -o support/manpage/places.1
-    cp support/manpage/places.md.bk support/manpage/places.md
-    rm support/manpage/places.md.bk
+    cp support/manpage/places.md support/manpage/places_fix.md
+    sed -i "s|<version>|{{ version }}|" support/manpage/places_fix.md
+    sed -i "s|<date>|$(date '+%Y-%m-%d')|" support/manpage/places_fix.md
+    pandoc --standalone --to man support/manpage/places_fix.md -o support/manpage/places.1
+    rm support/manpage/places_fix.md
 
 # Create and view the manpage
 man: _gen-man
