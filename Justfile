@@ -23,8 +23,8 @@ _shellcheck:
 tag-version: check
     grep -Fq '{{ version }}' CHANGELOG.md                 # The CHANGELOG.md should contains updated changes
     git diff --no-ext-diff --quiet --exit-code              # All files should be committed
-    git tag -a {{ version }} -m "Release {{ version }}"
-    git push origin {{ version }}
+    git tag -a v{{ version }} -m "Release v{{ version }}"
+    git push origin v{{ version }}
 
 # crate tag push it to origin and then publish to crates.io (TODO)
 crates: tag-version
